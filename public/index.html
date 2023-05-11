@@ -1,43 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+  -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <!--
+    Notice the use of %PUBLIC_URL% in the tags above.
+    It will be replaced with the URL of the `public` folder during the build.
+    Only files inside the `public` folder can be referenced from the HTML.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+    work correctly both with client-side routing and a non-root public URL.
+    Learn how to configure a non-root public URL by running `npm run build`.
+  -->
+  <title>React App</title>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <script>
+    window.gameConfig = {
+      userId: 2, // id of the first player
+      userName: 'sanya', // name of the first player
+      opponentId: 4, // id of the second player
+      opponentName: 'motileck', // name of the second player
+      gridSize: 10, // maxumim cells in a grid row (grid is a square, i.e gridSize=10 meaning a grid 10x10 cells, 100 cells overral)
+      userStartPos: { x: 32, y: 16 }, // coordinates when the first player starts the game
+      opponentStartPos: { x: 44, y: 1}, // coordinates when the second player starts the game
+      gridWalls: [
+        {
+          x: 1,
+          y: 1,
+        },
+        {
+          x: 2,
+          y: 2,
+        },
+        {
+          x: 15,
+          y: 13,
+        }
+      ], // array of grid walls coordinates
+    };
+
+    window.gameResult = {
+      player1Id: 4, // winner id
+      player2Id: 2, // looser id
+      isDraw: 0, // 0 - no, 1 - yes, game ends and no one won
+      gameRecord: [
+        {
+          step: 0,
+          userMove: {
+            x: 31,
+            y: 16,
+          },
+          opponentMove: {
+            x: 44,
+            y: 2,
+          }
+        },
+        {
+          step: 1,
+          userMove: {
+            x: 30,
+            y: 16,
+          },
+          opponentMove: {
+            x: 45,
+            y: 2,
+          }
+        },
+        {
+          step: 2,
+          userMove: {
+            x: 30,
+            y: 16,
+          },
+          opponentMove: {
+            x: 44,
+            y: 3,
+          }
+        }
+      ] // array of a game history
+    }
+  </script>
+</head>
+
+<body>
+<noscript>
+  You need to enable JavaScript to run this app.
+</noscript>
+<div id="root"></div>
+<!--
+  This HTML file is a template.
+  If you open it directly in the browser, you will see an empty page.
+
+  You can add webfonts, meta tags, or analytics to this file.
+  The build step will place the bundled scripts into the <body> tag.
+
+  To begin the development, run `npm start` or `yarn start`.
+  To create a production bundle, use `npm run build` or `yarn build`.
+-->
+</body>
+
 </html>
