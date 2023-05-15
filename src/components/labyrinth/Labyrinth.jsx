@@ -59,16 +59,20 @@ const Labyrinth = ({ gameConfig, gameResult }) => {
     }
 
     return (
-        <div className="labyrinth">
-            {[...Array(gridSize)].map((_, row) => (
-                <div key={row} className="row">
-                    {[...Array(gridSize)].map((_, col) => (
-                        <div key={`${row}-${col}`} className={`cell${isWall(col,row) ? ' wall': ''}`}></div>
-                    ))}
-                </div>
-            ))}
-            {renderUserPlayer()}
-            {renderOpponentPlayer()}
+        <div className='labyrinth-container'>
+            <div className="torch-left"></div>
+            <div className="labyrinth">
+                {[...Array(gridSize)].map((_, row) => (
+                    <div key={row} className="row">
+                        {[...Array(gridSize)].map((_, col) => (
+                            <div key={`${row}-${col}`} className={`cell${isWall(col,row) ? ' wall': ''}`}></div>
+                        ))}
+                    </div>
+                ))}
+                {renderUserPlayer()}
+                {renderOpponentPlayer()}
+            </div>
+            <div className='torch-right'></div>
         </div>
     );
 };
