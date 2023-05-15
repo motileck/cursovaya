@@ -29,8 +29,8 @@
       opponentId: 4, // id of the second player
       opponentName: 'motileck', // name of the second player
       gridSize: 10, // maxumim cells in a grid row (grid is a square, i.e gridSize=10 meaning a grid 10x10 cells, 100 cells overral)
-      userStartPos: { x: 32, y: 16 }, // coordinates when the first player starts the game
-      opponentStartPos: { x: 44, y: 1}, // coordinates when the second player starts the game
+      userStartPos: { x: 2, y: 6 }, // coordinates when the first player starts the game
+      opponentStartPos: { x: 4, y: 1}, // coordinates when the second player starts the game
       gridWalls: [
         {
           x: 1,
@@ -41,8 +41,36 @@
           y: 2,
         },
         {
-          x: 15,
-          y: 13,
+          x: 9,
+          y: 3,
+        },
+        {
+          x: 9,
+          y: 4,
+        },
+        {
+          x: 8,
+          y: 3,
+        },
+        {
+          x: 7,
+          y: 3,
+        },
+        {
+          x: 7,
+          y: 7,
+        },
+        {
+          x: 6,
+          y: 7,
+        },
+        {
+          x: 6,
+          y: 6,
+        },
+        {
+          x: 5,
+          y: 5,
         }
       ], // array of grid walls coordinates
     };
@@ -55,34 +83,89 @@
         {
           step: 0,
           userMove: {
-            x: 31,
-            y: 16,
+            x: 3,
+            y: 6,
           },
           opponentMove: {
-            x: 44,
+            x: 4,
             y: 2,
           }
         },
         {
           step: 1,
           userMove: {
-            x: 30,
-            y: 16,
+            x: 3,
+            y: 7,
           },
           opponentMove: {
-            x: 45,
+            x: 5,
             y: 2,
           }
         },
         {
           step: 2,
           userMove: {
-            x: 30,
-            y: 16,
+            x: 3,
+            y: 8,
           },
           opponentMove: {
-            x: 44,
+            x: 5,
             y: 3,
+          }
+        },
+        {
+          step: 3,
+          userMove: {
+            x: 4,
+            y: 8,
+          },
+          opponentMove: {
+            x: 5,
+            y: 4,
+          }
+        },
+        {
+          step: 4,
+          userMove: {
+            x: 4,
+            y: 9,
+          },
+          opponentMove: {
+            x: 6,
+            y: 4,
+          }
+        },
+        {
+          step: 5,
+          userMove: {
+            x: 5,
+            y: 9,
+          },
+          opponentMove: {
+            x: 7,
+            y: 4,
+          }
+        },
+        {
+          step: 6,
+          userMove: {
+            x: 6,
+            y: 9,
+          },
+          opponentMove: {
+            x: 8,
+            y: 4,
+          }
+        },
+        {
+          step: 7,
+          userMove: {
+            x: 6,
+            y: 8,
+          },
+          opponentMove: {
+            x: 8,
+            y: 5,
           }
         }
       ] // array of a game history

@@ -1,0 +1,39 @@
+.game-record-heading {
+  color: #2d2d65;
+}
+
+.game-record-table {
+  margin: 0 auto;
+  border: 1px solid #332e2e;
+  background: #2d2c53;
+  color: #fff;
+  width: 60%;
+}
+
+.table-head {
+  background: #252832;
+}
+
+.table-head th {
+  padding: 10px;
+}
+
+.table-body td {
+  background: rgb(51, 103, 193);
+}
+
+.step-heading {
+  color: #e66d22;
+}
+
+.player-heading, .opponent-heading {
+  width: 400px;
+}
+
+.player-heading {
+  color: #44d33d;
+}
+
+.opponent-heading {
+  color: #e03a3a;
+}

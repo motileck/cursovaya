@@ -1,7 +1,7 @@
 import React from 'react';
 import './GameRecordTable.css'
 
-type TGameRecordTableProps = {
+/*type TGameRecordTableProps = {
     gameResult: {
         player1Id: number,
         player2Id: number,
@@ -12,12 +12,13 @@ type TGameRecordTableProps = {
             opponentMove: { x: number, y: number },
         }>,
     },
-};
+};*/
 
-const GameRecordTable: React.FC<TGameRecordTableProps> = ({ gameResult }) => {
+const GameRecordTable = ({ gameConfig, gameResult }) => {
     const { player1Id, player2Id, isDraw, gameRecord } = gameResult;
+    const { userName, opponentName} = gameConfig
 
-    const renderTableRows = () => {
+    /*const renderTableRows = () => {
         return gameRecord.map((record, index) => (
             <tr key={index}>
                 <td>{record.step}</td>
@@ -25,25 +26,21 @@ const GameRecordTable: React.FC<TGameRecordTableProps> = ({ gameResult }) => {
                 <td>{`(${record.opponentMove.x}, ${record.opponentMove.y})`}</td>
             </tr>
         ));
-    };
+    };*/
 
     return (
         <div>
-            <h2>Game Record</h2>
-            <table>
-                <thead>
+            <h2 className='game-record-heading'>Ходы игроков</h2>
+            <table className='game-record-table'>
+                <thead className='table-head'>
                 <tr>
-                    <th>Step</th>
-                    <th>{`Player ${player1Id} Move`}</th>
-                    <th>{`Player ${player2Id} Move`}</th>
+                    <th className='step-heading'>Ход</th>
+                    <th className='player-heading'>{`Игрок ${userName}`}</th>
+                    <th className='opponent-heading'>{`Оппонент ${opponentName}`}</th>
                 </tr>
                 </thead>
-                <tbody>{renderTableRows()}</tbody>
+                <tbody className='table-body' id='tableBody'></tbody>
             </table>
-            {isDraw && <div>The game is a draw.</div>}
-            {!isDraw && (
-                <div>{`Player ${player1Id} wins!`}</div>
-            )}
         </div>
     );
 };

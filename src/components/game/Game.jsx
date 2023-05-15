@@ -3,9 +3,9 @@ import './Game.css'
 import StepControlPanel from "../stepControlPanel/StepControlPanel";
 import Labyrinth from "../labyrinth/Labyrinth";
 import GameRecordTable from "../gameRecordTable/GameRecordTable";
+import WinnerModal from '../winnerModal/WinnerModal';
 
-
-type TGameConfig = {
+/*type TGameConfig = {
     userId: number,
     userName: string,
     opponentId: number,
@@ -27,11 +27,11 @@ type TGameRecordItem = {
     step: number,
     userMove: { x: number, y: number },
     opponentMove: { x: number, y: number },
-};
+};*/
 
-const Game: React.FC = () => {
-    const [gameConfig, setGameConfig] = useState<TGameConfig | null>(null);
-    const [gameResult, setGameResult] = useState<TGameResult | null>(null);
+const Game = () => {
+    const [gameConfig, setGameConfig] = useState(null);
+    const [gameResult, setGameResult] = useState(null);
 
     // функция для чтения входных данных из объекта окна браузера
     const readInputData = () => {
@@ -54,7 +54,8 @@ const Game: React.FC = () => {
                 <>
                     <StepControlPanel gameConfig={gameConfig} gameResult={gameResult} />
                     <Labyrinth gameConfig={gameConfig} gameResult={gameResult} />
-                    <GameRecordTable gameResult={gameResult} />
+                    <GameRecordTable gameConfig={gameConfig} gameResult={gameResult} />
+                    <WinnerModal gameConfig={gameConfig} gameResult={gameResult} />
                 </>
             )}
         </div>
